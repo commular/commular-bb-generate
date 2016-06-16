@@ -1,10 +1,10 @@
 # commular-bb-generate
 
 [![NPM Version](http://img.shields.io/npm/v/commular-bb-generate.svg?style=flat)](https://npmjs.org/package/commular-bb-generate)
-[![Build Status](http://img.shields.io/travis/tcorral/commular-bb-generate.svg?style=flat)](https://travis-ci.org/tcorral/commular-bb-generate)
-[![Build status](https://ci.appveyor.com/api/projects/status/3j6wb679ipd1maqp?svg=true)](https://ci.appveyor.com/project/tcorral/commular-bb-generate)
+[![Build Status](http://img.shields.io/travis/commular/commular-bb-generate.svg?style=flat)](https://travis-ci.org/commular/commular-bb-generate)
+[![Build status](https://ci.appveyor.com/api/projects/status/3j6wb679ipd1maqp?svg=true)](https://ci.appveyor.com/project/commular/commular-bb-generate)
 
-A [commular](https://github.com/tcorral/commular) module to Generate Backbase Components.
+A [commular](https://github.com/commular/commular) module to Generate Backbase Components.
 
 ### Generate
 
