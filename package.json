@@ -1,6 +1,6 @@
 {
   "name": "commular-bb-generate",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "Backbase Generate Command module",
   "main": "scripts/index.js",
   "scripts": {
