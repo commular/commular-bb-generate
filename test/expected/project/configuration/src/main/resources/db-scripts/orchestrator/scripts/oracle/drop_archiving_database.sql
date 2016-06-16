@@ -1,0 +1,1 @@
+drop table TB_WORK_PACKAGE_ARCHIVES cascade constraints;

@@ -1,0 +1,9 @@
+{
+  "name": "collection",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "collection-universal": "0.13.1"
+  }
+}
+

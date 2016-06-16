@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context useHttpOnly="false">
+
+    <Resource name="jdbc/configuration-datasource"
+              auth="Container"
+              type="javax.sql.DataSource"
+              maxActive="10"
+              maxIdle="2"
+              username="${db.username}"
+              password="${db.password}"
+              maxWait="5000"
+              driverClassName="${db.jdbc.driver}"
+              validationQuery="select 1"
+              defaultTransactionIsolation="READ_COMMITTED"
+              url="${portal.config.jdbc.url}"/>
+
+    <Resource name="jdbc/content-datasource"
+              auth="Container"
+              type="javax.sql.DataSource"
+              maxActive="10"
+              maxIdle="2"
+              username="${db.username}"
+              password="${db.password}"
+              maxWait="5000"
+              driverClassName="${db.jdbc.driver}"
+              validationQuery="select 1"
+              defaultTransactionIsolation="READ_COMMITTED"
+              url="${portal.content.jdbc.url}"/>
+
+    <Resource name="jdbc/resource-datasource"
+              auth="Container"
+              type="javax.sql.DataSource"
+              maxActive="10"
+              maxIdle="2"
+              username="${db.username}"
+              password="${db.password}"
+              maxWait="5000"
+              driverClassName="${db.jdbc.driver}"
+              validationQuery="select 1"
+              defaultTransactionIsolation="READ_COMMITTED"
+              url="${portal.resource.jdbc.url}"/>
+
+    <Environment name="backbase/config"
+            value="${backbase.config.path}/backbase.properties"
+            type="java.lang.String"
+            override="false"/>
+
+</Context>

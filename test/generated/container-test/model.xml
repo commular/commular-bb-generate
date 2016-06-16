@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalog>
+    <container>
+        <name>container-test</name>
+        <contextItemName>[BBHOST]</contextItemName>
+        <properties>
+            <property name="TemplateName">
+                <value type="string">testTemplate</value>
+            </property>
+            <property name="viewNamespace">
+                <value type="string">templates_testTemplate</value>
+            </property>
+            <property name="title" label="Title" viewHint="admin,designModeOnly">
+                <value type="string">container-test</value>
+            </property>
+            <property name="config">
+                <value type="string">$(itemRoot)/config.xml</value>
+            </property>
+            <property name="csr">
+                <value type="boolean">false</value>
+            </property>
+            <property name="thumbnailUrl">
+                <value type="string">$(itemRoot)/media/icon.png</value>
+            </property>
+        </properties>
+        <tags>
+          <tag type="section">layouts</tag>
+          
+          <tag type="regular">layouts</tag>
+          
+        </tags>
+    </container>
+</catalog>

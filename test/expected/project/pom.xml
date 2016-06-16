@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="
+        http://maven.apache.org/POM/4.0.0
+        http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.mycompany.project</groupId>
+    <artifactId>project</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>Backbase CXP :: Aggregator</name>
+    <description>A module that aggregates all other project modules.</description>
+
+    <properties>
+        <!--Project name-->
+        <project>project</project>
+    </properties>
+
+    <modules>
+        <module>parent</module>
+        <module>cxp-exports</module>
+        <module>statics</module>
+        <module>services</module>
+        <module>configuration</module>
+        <module>webapps</module>
+        <module>dist</module>
+        <!-- <module>styleguide</module> -->
+    </modules>
+
+</project>

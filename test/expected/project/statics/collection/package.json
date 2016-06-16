@@ -1,0 +1,18 @@
+{
+  "name": "collection",
+  "version": "0.0.1",
+  "dependencies": { },
+  "devDependencies": {
+    "bower": "1.5.2",
+    "bb-cli": "^0.2.2",
+    "filesystem-bower-resolver": "^1.2.0",
+    "bb-bower-resolver": "^1.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-theme": "bb build-themes -t ./themes",
+    "import-collection": "bb import-collection -a",
+    "import-retail-portal": "bb import --target ../../cxp-exports/retail-banking",
+    "export-retail-portal": "bb export --type portal --portal retail-banking --save ../../cxp-exports/retail-banking --chunk --force"
+  }
+}

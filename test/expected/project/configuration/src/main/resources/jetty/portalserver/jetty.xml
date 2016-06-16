@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure_9_0.dtd">
+<Configure class="org.eclipse.jetty.server.Server" id="Server">
+
+    <New id="httpConfig" class="org.eclipse.jetty.server.HttpConfiguration">
+        <Set name="secureScheme">https</Set>
+        <Set name="securePort">
+            <Property name="jetty.secure.port" default="${portal.port}3"/>
+        </Set>
+        <Set name="outputBufferSize">32768</Set>
+        <Set name="requestHeaderSize">32768</Set>
+        <Set name="responseHeaderSize">32768</Set>
+        <Set name="sendServerVersion">true</Set>
+        <Set name="sendDateHeader">false</Set>
+        <Set name="headerCacheSize">512</Set>
+    </New>
+
+    <Call name="addConnector">
+        <Arg>
+            <New class="org.eclipse.jetty.server.ServerConnector">
+                <Arg name="server">
+                    <Ref refid="Server"/>
+                </Arg>
+                <Arg name="factories">
+                    <Array type="org.eclipse.jetty.server.ConnectionFactory">
+                        <Item>
+                            <New class="org.eclipse.jetty.server.HttpConnectionFactory">
+                                <Arg name="config">
+                                    <Ref refid="httpConfig"/>
+                                </Arg>
+                            </New>
+                        </Item>
+                    </Array>
+                </Arg>
+                <Set name="host">
+                    <Property name="jetty.host"/>
+                </Set>
+                <Set name="port">
+                    <Property name="jetty.port" default="${portal.port}"/>
+                </Set>
+            </New>
+        </Arg>
+    </Call>
+
+
+    <New id="portalDS" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>jdbc/portalDS</Arg>
+        <Arg>
+            <New class="com.mchange.v2.c3p0.ComboPooledDataSource">
+                <Set name="driverClass">${db.jdbc.driver}</Set>
+                <Set name="jdbcUrl">${portal.foundation.jdbc.url}</Set>
+                <Set name="user">${db.username}</Set>
+                <Set name="password">${db.password}</Set>
+            </New>
+        </Arg>
+    </New>
+    <New id="auditDS" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>jdbc/auditDS</Arg>
+        <Arg>
+            <New class="com.mchange.v2.c3p0.ComboPooledDataSource">
+                <Set name="driverClass">${db.jdbc.driver}</Set>
+                <Set name="jdbcUrl">${audit.jdbc.url}</Set>
+                <Set name="user">${db.username}</Set>
+                <Set name="password">${db.password}</Set>
+            </New>
+        </Arg>
+    </New>
+    <New id="integrationDS" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>jdbc/integration</Arg>
+        <Arg>
+            <New class="com.mchange.v2.c3p0.ComboPooledDataSource">
+                <Set name="driverClass">${db.jdbc.driver}</Set>
+                <Set name="jdbcUrl">${integration.jdbc.url}</Set>
+                <Set name="user">${db.username}</Set>
+                <Set name="password">${db.password}</Set>
+            </New>
+        </Arg>
+    </New>
+    <New id="portalConfigLocation" class="org.eclipse.jetty.plus.jndi.EnvEntry">
+        <Arg></Arg>
+        <Arg>backbase/config</Arg>
+        <Arg type="java.lang.String">${backbase.config.path}/backbase.properties</Arg>
+        <Arg type="boolean">false</Arg>
+    </New>
+    <New id="iceConfigLocation" class="org.eclipse.jetty.plus.jndi.EnvEntry">
+        <Arg></Arg>
+        <Arg>portalmanager/ice-config</Arg>
+        <Arg type="java.lang.String">${backbase.config.path}/ice-config.properties</Arg>
+        <Arg type="boolean">false</Arg>
+    </New>
+    <New id="ptcConfigLocation" class="org.eclipse.jetty.plus.jndi.EnvEntry">
+        <Arg></Arg>
+        <Arg>mashup/ptc-config</Arg>
+        <Arg type="java.lang.String">${backbase.config.path}/ptc-config.properties</Arg>
+        <Arg type="boolean">false</Arg>
+    </New>
+    <New id="servicesLocation" class="org.eclipse.jetty.plus.jndi.EnvEntry">
+        <Arg></Arg>
+        <Arg>backbase/services-config</Arg>
+        <Arg type="java.lang.String">file:${backbase.config.path}/services.properties</Arg>
+        <Arg type="boolean">false</Arg>
+    </New>
+</Configure>

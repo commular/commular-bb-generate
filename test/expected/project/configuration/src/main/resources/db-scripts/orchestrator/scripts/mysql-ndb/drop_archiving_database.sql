@@ -1,0 +1,1 @@
+drop table if exists TB_WORK_PACKAGE_ARCHIVES;

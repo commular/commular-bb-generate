@@ -1,0 +1,6 @@
+.dependencies.json
+.gitignore
+.jshintrc
+.travis.yml
+Gruntfile.js
+test
